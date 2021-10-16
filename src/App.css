@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+.app {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.app-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  justify-content: space-between;
+  position: relative;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.app-header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.app-header-logo .app-logo {
+  width: 100px;
+  display: flex;
+}
+
+.app-header-title {
+  color: white;
+  font-size: 40px;
+}
+
+.connect-btn {
+  padding: 10px 25px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  background-color: rgba(65, 84, 150, 0.5);
+  transition: 0.5s;
+}
+
+.connect-btn:hover {
+  transform: scale(0.98);
+}
+
+.app-container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-main {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: rgb(0 0 0 / 1%) 0px 0px 1px, rgb(0 0 0 / 4%) 0px 4px 8px,
+    rgb(0 0 0 / 4%) 0px 16px 24px, rgb(0 0 0 / 1%) 0px 24px 32px;
+  border-radius: 8px;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+  padding-bottom: 1rem;
+  background-image: radial-gradient(
+      rgba(253, 224, 224, 0.3),
+      rgba(255, 0, 0, 0) 40vw
+    ),
+    radial-gradient(rgba(0, 128, 0, 0.3), rgba(0, 128, 0, 0) 40vw),
+    radial-gradient(rgba(0, 0, 255, 0.3), rgba(0, 0, 255, 0) 40vw),
+    radial-gradient(rgba(45, 30, 221, 0.57), rgba(255, 255, 0, 0) 40vw),
+    radial-gradient(rgba(105, 174, 35, 0.3), rgba(255, 0, 0, 0) 40vw);
+  background-position: -40vw 14rem, 50% 10rem, 60vw 14rem,
+    -10vw calc(14rem + 20vw), 30vw calc(14rem + 20vw);
+  background-size: 80vw 80vw;
+  border: 3px #f4f4f49e solid;
+  animation: animateGlow 1s ease 1;
+}
+
+.app-main-header {
+  padding: 1rem 1.25rem 0.8rem;
+  width: 100%;
+  color: rgb(195, 197, 203);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-main-header-title {
+  font-size: 24px;
+  color: #f4f4f4;
+}
+
+.app-main-header-button {
+  cursor: pointer;
+}
+
+.settings {
+  min-width: 20.125rem;
+  background: rgba(41, 43, 46, 0.9);
+  box-shadow: rgb(0 0 0 / 1%) 0 0 1px, rgb(0 0 0 / 4%) 0 4px 8px,
+    rgb(0 0 0 / 4%) 0 16px 24px, rgb(0 0 0 / 1%) 0 24px 32px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  z-index: -1;
+  user-select: none;
+  right: -3rem;
+  opacity: 0;
+  transition: 0.5s;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.settings.active {
+  top: 5rem;
+  opacity: 1;
+  z-index: 100;
+  max-height: 300px;
+}
+
+.settings-content {
+  width: 100%;
+  max-width: 320px;
+  padding: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+
+.settings-main {
+  margin-top: 10px;
+}
+
+.settings-title {
+  font-weight: bold;
+  text-align: left;
+}
+
+.settings-row {
+  margin-bottom: 15px;
+}
+
+.settings-form {
+  display: flex;
+  margin-top: 8px;
+  align-items: center;
+}
+
+.settings-form button {
+  margin-right: 8px;
+  background-color: #2172e5;
+  color: #fff;
+  height: 2rem;
+  font-size: 1rem;
+  width: auto;
+  min-width: 3.5rem;
+  border-radius: 36px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(64, 68, 79);
+  border-image: initial;
+  outline: currentcolor none medium;
+}
+
+.settings-input {
+  padding: 0 0.75rem;
+  flex: 1 1 0%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: rgb(255, 255, 255);
+  height: 2rem;
+  font-size: 1rem;
+  width: auto;
+  min-width: 3.5rem;
+  border-radius: 36px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(64, 68, 79);
+  border-image: initial;
+  outline: currentcolor none medium;
+  background: none 0% 0% repeat scroll rgb(33, 36, 41);
+}
+
+.settings-input input {
+  width: 100%;
+  height: 100%;
+  font-size: 16px !important;
+}
+
+.toggle-mode {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toggle-btn-content {
+  display: flex;
+  cursor: pointer;
+  border-radius: 12px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(64, 68, 79);
+  border-image: initial;
+  background: none 0% 0% repeat scroll rgb(33, 36, 41);
+  outline: currentcolor none medium;
+  padding: 2px;
+}
+
+.toggle-btn {
+  color: rgb(195, 197, 203);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9px;
+  background: none 0% 0% repeat scroll rgba(0, 0, 0, 0);
+  font-weight: bold;
+}
+
+.toggle-btn.active {
+  background: #565a69 none repeat scroll 0% 0%;
+  color: #fff;
+}
+
+.app-main-content {
+  padding: 10px;
+}
+
+.app-main-container {
+  position: relative;
+  display: flex;
+  flex-flow: wrap;
+}
+
+.app-main-container-reverse {
+  position: relative;
+  display: flex;
+  flex-flow: wrap-reverse;
+}
+
+.swapp_changer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 4px;
+  border-radius: 12px;
+  height: 32px;
+  width: 32px;
+  background-color: #212429;
+  border: 4px solid #191b1f;
+  z-index: 2;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.swapp_changer.active {
+  border-radius: 50%;
+}
+
+.swapp_changer:hover {
+  border: 2px #2cffe35e solid;
+  padding: 6px;
+}
+
+.form-group {
+  width: 100%;
+  display: flex;
+  background: rgb(68, 72, 83);
+  border-radius: 8px;
+  padding: 1rem 1rem 0.75rem;
+  margin-bottom: 5px;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-group-icon {
+  display: flex;
+  align-items: center;
+  padding: 5px 15px 5px 8px;
+  background-color: #191b1f;
+  border-radius: 10px;
+}
+
+.form-group-icon .icon {
+  width: 28px;
+  border-radius: 50%;
+  display: flex;
+}
+
+.form-group-icon .text {
+  color: white;
+  font-size: 24px;
+  margin-left: 8px;
+  margin-top: -3px;
+}
+
+.form-control {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  text-align: right;
+  width: 100%;
+}
+
+.form-btn {
+  margin-top: 10px;
+}
+
+.form-btn button {
+  width: 100%;
+  padding: 15px 25px !important;
+}
